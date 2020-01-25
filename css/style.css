@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.wrapper {
+
+    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+input,
+select {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+
+
+aside {
+
+    width: 27%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+aside h1 {
+    font-size: 3.9em;
+    padding: 2%;
+
+}
+
+aside form {
+    padding-left: 2%;
+}
+
+aside form input,
+aside form select {
+    margin: 7% 0;
+}
+
+main {
+    width: 72%;
+    border: 1px solid black;
+}
+
+main header {
+    border-bottom: 1px solid black;
+    padding: 8.3% 4.3%
+}
+
+main header form {
+    padding-left: 1%;
+}
+
+main header form select {
+    margin-right: 7%;
+
+}
