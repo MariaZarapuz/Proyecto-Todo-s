@@ -10,7 +10,7 @@
     max-width: 50%;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 2% auto;
     min-height: 500px;
 }
 
@@ -34,7 +34,7 @@ aside {
 
 aside h1 {
     font-size: 3.9em;
-    padding: 2%;
+    padding: 16%;
 
 }
 
@@ -44,8 +44,11 @@ aside form {
 
 aside form input,
 aside form select {
-    margin: 7% 0;
+    margin: 11% 0;
+    display: block;
 }
+
+
 
 main {
     width: 72%;
@@ -64,4 +67,22 @@ main header form {
 main header form select {
     margin-right: 7%;
 
+}
+
+main section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+
+main section p {
+    width: 70%;
+    padding: 1em;
+    font-size: 2em;
+    margin-left: 2%;
+}
+
+main section button {
+    display: inline-block;
+    width: 25%;
 }
