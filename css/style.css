@@ -48,7 +48,12 @@ aside form select {
     display: block;
 }
 
-
+aside form input:last-child {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
 
 main {
     width: 72%;
@@ -69,20 +74,33 @@ main header form select {
 
 }
 
-main section {
+main section div {
     display: flex;
     flex-wrap: wrap;
     margin-top: 1%;
 }
 
-main section p {
+main section div p {
     width: 70%;
     padding: 1em;
     font-size: 2em;
     margin-left: 2%;
 }
 
-main section button {
+main section div button {
     display: inline-block;
     width: 25%;
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
 }
