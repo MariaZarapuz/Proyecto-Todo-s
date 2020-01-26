@@ -5,19 +5,53 @@
     font-size: 1em;
 }
 
+::-webkit-input-placeholder {
+    color: white;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+input:focus,
+select:focus,
+input.form-control:focus,
+select.form-control:focus {
+
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+
 .wrapper {
 
     max-width: 50%;
     display: flex;
     flex-wrap: wrap;
     margin: 2% auto;
-    min-height: 500px;
+
 }
 
 input,
 select {
+
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    color: white;
 }
 
 
@@ -25,7 +59,9 @@ select {
 aside {
 
     width: 27%;
+    background-color: #e91e63;
     border: 1px solid black;
+    border-right-width: 0px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -35,6 +71,7 @@ aside {
 aside h1 {
     font-size: 3.9em;
     padding: 16%;
+    color: white;
 
 }
 
@@ -46,13 +83,16 @@ aside form input,
 aside form select {
     margin: 11% 0;
     display: block;
+    background-color: #e91e63;
 }
 
-aside form input:last-child {
+aside form button {
     cursor: pointer;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: #e91e63;
+    border: none;
+    color: white;
+    font-size: 2em;
+    margin-left: 6%;
 }
 
 main {
@@ -61,12 +101,19 @@ main {
 }
 
 main header {
-    border-bottom: 1px solid black;
-    padding: 8.3% 4.3%
+    background-color: #000;
+    border-bottom: 1px solid white;
+    padding: 7% 0 7% 2%;
 }
 
 main header form {
     padding-left: 1%;
+
+}
+
+main header form input,
+main header form select {
+    background-color: black;
 }
 
 main header form select {
@@ -74,23 +121,37 @@ main header form select {
 
 }
 
+option:hover {
+    color: yellow;
+    background-color: red;
+}
+
+main header form select option {
+    background-color: #e91e63;
+}
+
 main section div {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1%;
+    margin-top: -1px;
+    border-top: 2px solid black;
 }
 
 main section div p {
-    width: 70%;
+    width: 80%;
     padding: 1em;
     font-size: 2em;
     margin-left: 2%;
+    border-top-width: 0px;
 }
 
 main section div button {
-    display: inline-block;
-    width: 25%;
-    cursor: pointer;
+    background-color: white;
+    border: none;
+    height: 50px;
+    margin-top: 27px;
+    color: #e91e63;
+    font-size: 25px;
 }
 
 .red {

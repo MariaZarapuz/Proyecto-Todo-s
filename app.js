@@ -17,11 +17,10 @@ listaTareas1 = [{
     }
 ]
 var listaTareas = document.getElementById('listaTareas');
-var contador = 0;
+var contador = 2;
 
 function pintarTareas(pListaTareas) {
 
-    console.log(listaTareas)
     var colorPrioridad
     for (tarea of pListaTareas) {
         console.log(tarea)
@@ -38,7 +37,7 @@ function pintarTareas(pListaTareas) {
 
         }
 
-        listaTareas.innerHTML += '<div><p class= ' + colorPrioridad + ' >' + tarea.titulo + '</p><button id=' + tarea.idTarea + '>Eliminar</button></div>';
+        listaTareas.innerHTML += '<div><p class= ' + colorPrioridad + ' >' + tarea.titulo + '</p><button id=' + tarea.idTarea + '><i class="far fa-trash-alt"></i></button></div>';
     }
 
 
@@ -47,33 +46,40 @@ function pintarTareas(pListaTareas) {
 
 pintarTareas(listaTareas1);
 
-function addTareas(pId, pTitulo, pPrioridad) {
+function addTareas() {
+    var valorInputs = document.getElementsByName('add');
+    console.log(valorInputs)
     var tarea = {
-        idTarea: pId,
-        titulo: pTitulo,
-        prioridad: pPrioridad
+        idTarea: contador++,
+        titulo: valorInputs[0].value,
+        prioridad: valorInputs[1].value
     }
+    console.log(tarea)
     listaTareas1.push(tarea)
-    pintarTareas()
+    pintarTareas(listaTareas1)
 
 }
 
+var guardar =
 
-function eliminarTarea(pId) {
-    var borrarTarea = listaTareas1.find(tarea => tarea.idTarea == pId);
-    console.log(borrarTarea)
-    var posicionTarea = listaTareas1.findIndex(tarea => tarea.id == borrarTarea.id);
-    console.log(posicionTarea)
 
-    listaTareas1.splice(posicionTarea, 1);
-    listaTareas.innerHTML = '';
-    pintarTareas();
-}
+    function eliminarTarea(pId) {
+        var borrarTarea = listaTareas1.find(tarea => tarea.idTarea == pId);
+        console.log(borrarTarea)
+        var posicionTarea = listaTareas1.findIndex(tarea => tarea.id == borrarTarea.id);
+        console.log(posicionTarea)
 
-function filtrarPrioridad(pPrioridad) {
+        listaTareas1.splice(posicionTarea, 1);
+        listaTareas.innerHTML = '';
+        pintarTareas(listaTareas1);
+    }
+
+function filtrarPrioridad() {
+    var filtrarTarea = document.getElementById('filtrarTarea').value
+
 
     for (tarea of listaTareas1) {
-        var tareaFiltrada = listaTareas1.filter((tarea => tarea.prioridad == pPrioridad))
+        var tareaFiltrada = listaTareas1.filter((tarea => tarea.prioridad == filtrarTarea))
     }
     listaTareas1.innerHTML = tareaFiltrada
 
@@ -88,11 +94,13 @@ function vaciarDom() {
 
 }
 
-function filtarCaracteres(pdato) {
+function filtarCaracteres() {
+    var caracteres = document.getElementById('buscar').value
+    console.log(caracteres)
     var listaCaracteres = new Array();
     for (tarea of listaTareas1) {
 
-        var valor = tarea.titulo.includes(pdato)
+        var valor = tarea.titulo.includes(caracteres)
         if (valor == true) {
             listaCaracteres.push(tarea)
         }
