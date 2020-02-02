@@ -42,6 +42,7 @@ select.form-control:focus {
     display: flex;
     flex-wrap: wrap;
     margin: 2% auto;
+    min-height: 376px;
 
 }
 
@@ -152,6 +153,12 @@ main section div button {
     margin-top: 27px;
     color: #e91e63;
     font-size: 25px;
+    cursor: pointer;
+}
+
+.sinTareas {
+    font-size: 3em;
+    margin-left: 1em;
 }
 
 .red {

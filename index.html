@@ -14,27 +14,27 @@
     <div class="wrapper">
         <aside>
             <h1>To Do</h1>
-            <form action="">
-                <input type="text" name="add" id="" placeholder="Introduce la tarea">
-                <select name="add" id="">
+            <form>
+                <input type="text" name="add" id="inputTarea" placeholder="Introduce la tarea">
+                <select name="add" id="inputPrioridad">
                     <option value="">Introduce una prioridad</option>
                     <option value="urgente">Urgente</option>
                     <option value="diaria">Diaria</option>
                     <option value="mensual">Mensual</option>
                 </select>
-                <button><i class="far fa-save"></i></button>
+                <button id="btnAside"><i class="far fa-save"></i></button>
             </form>
         </aside>
         <main>
             <header id="filtro">
-                <form action="">
-                    <select id="filtrarTarea">
+                <form>
+                    <select id="buscarPrioridad">
                         <option value="">Todas las tareas</option>
                         <option value="urgente">Urgente</option>
                         <option value="diaria">Diaria</option>
                         <option value="mensual">Mensual</option>
                     </select>
-                    <input type="text" id="buscar" placeholder="Buscar tarea">
+                    <input type="text" id="buscarContenido" placeholder="Buscar tarea">
                 </form>
             </header>
             <section id="listaTareas">
@@ -42,7 +42,10 @@
 
             </section>
         </main>
-        <script src="app.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/eventos.js"></script>
+
+
 
 
 </body>
