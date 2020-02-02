@@ -14,7 +14,7 @@
     <div class="wrapper">
         <aside>
             <h1>To Do</h1>
-            <form>
+            <form id="form">
                 <input type="text" name="add" id="inputTarea" placeholder="Introduce la tarea">
                 <select name="add" id="inputPrioridad">
                     <option value="">Introduce una prioridad</option>
@@ -24,17 +24,18 @@
                 </select>
                 <button id="btnAside"><i class="far fa-save"></i></button>
             </form>
+            <p id="mensaje" class="mensaje"></p>
         </aside>
         <main>
             <header id="filtro">
-                <form>
+                <form id="form">
                     <select id="buscarPrioridad">
-                        <option value="">Todas las tareas</option>
+                        <option value="todas las tareas">Todas las tareas</option>
                         <option value="urgente">Urgente</option>
                         <option value="diaria">Diaria</option>
                         <option value="mensual">Mensual</option>
                     </select>
-                    <input type="text" id="buscarContenido" placeholder="Buscar tarea">
+                    <input type=" text" id="buscarContenido" placeholder="Buscar tarea">
                 </form>
             </header>
             <section id="listaTareas">

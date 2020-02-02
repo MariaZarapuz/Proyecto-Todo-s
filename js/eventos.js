@@ -48,21 +48,30 @@ btnGuardar.addEventListener('click', recogerTareas)
 
 function recogerTareas(e) {
     e.preventDefault()
-    console.log(e.target)
 
     let recogertarea = document.getElementById('inputTarea').value;
     let recogerPrioridad = document.getElementById('inputPrioridad').value;
     console.log(recogertarea, recogerPrioridad)
-    var tarea = {
-        idTarea: contador++,
-        titulo: recogertarea,
-        prioridad: recogerPrioridad
+    if (recogerTareas == '' || recogerPrioridad == '') {
+        let mensaje = document.getElementById('mensaje');
+        mensaje.innerText = 'Los campos no pueden estar vacios';
+        document.getElementById('form').reset();
+
+
+    } else {
+        mensaje.innerText = '';
+        var tarea = {
+            idTarea: contador++,
+            titulo: recogertarea,
+            prioridad: recogerPrioridad
+        }
+        listaInicial.push(tarea)
+
+        pintarTareas(listaInicial)
+
+        document.getElementById('form').reset();
+
     }
-    listaInicial.push(tarea)
-
-    pintarTareas(listaInicial)
-
-
 }
 
 
@@ -72,19 +81,33 @@ filtroPrioridad.addEventListener('change', recogerFiltroPrioridad)
 function recogerFiltroPrioridad(e) {
     let prioridad = e.target.value;
     console.log(prioridad)
-    let listaFiltradaPrioridad = filtrarPrioridad(listaInicial, prioridad)
-    pintarTareas(listaFiltradaPrioridad)
+    if (prioridad == 'todas las tareas') {
+        pintarTareas(listaInicial)
+    } else {
+        let listaFiltradaPrioridad = filtrarPrioridad(listaInicial, prioridad)
+        pintarTareas(listaFiltradaPrioridad)
+    }
 
 }
+
+
 var filtroPrioridad = document.getElementById('buscarContenido');
 
-filtroPrioridad.addEventListener('keyup', recogerCaracteres);
+filtroPrioridad.addEventListener('keypress', recogerCaracteres);
+
+
+
+
 
 function recogerCaracteres(e) {
-    let buscarCaracteres = e.target.value;
-    console.log(buscarCaracteres);
-    let listaFiltrarCaracteres = filtarCaracteres(listaInicial, buscarCaracteres)
-    pintarTareas(listaFiltrarCaracteres)
+    console.log(e.keycode)
+    if (e.keyCode == 13) {
+        e.preventDefault()
+        let buscarCaracteres = e.target.value;
+        console.log(buscarCaracteres);
+        let listaFiltrarCaracteres = filtarCaracteres(listaInicial, buscarCaracteres)
+        pintarTareas(listaFiltrarCaracteres)
+    }
 }
 var bntnborrar = document.getElementsByName('delete')
 console.log(bntnborrar)
